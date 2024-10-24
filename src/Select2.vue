@@ -99,6 +99,7 @@ export default {
         placeholder: this.placeholder,
         ...this.settings,
         data: this.options,
+        ...(this.language && { language: this.language }),
       })
       .on("select2:select select2:unselect", (ev) => {
         this.$emit("update:modelValue", this.select2.val());
